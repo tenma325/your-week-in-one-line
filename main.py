@@ -12,6 +12,8 @@ LINE = "Monday I said 'let's circle back.' By Friday the circle was complete and
 
 
 def main() -> None:
+    if not 1 <= len(LINE) <= 100:
+        raise ValueError(f"entry must be 1-100 characters, got {len(LINE)}")
     target = os.environ.get("ENTRY_OUTPUT_PATH", "/output/entry.txt")
     path = Path(target)
     try:
